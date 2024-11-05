@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <form id="equipment_form" action="/search" method="POST">
+        <h1>Racket Merchandise Analyzer</h1>
+        <div id="form-container">
+            <div id="left-side">
+                <div class="select-container">
+                    <label for="product_type">產品類型：</label>
+                    <select id="product_type" name="product_type" required>
+                        <option value="" disabled selected>請選擇產品類型</option>
+                        <option value="blade">Blade</option>
+                        <option value="rubber">Rubber</option>
+                        <option value="pips">Pips</option>
+                    </select>
+                </div>
+
+                <div class="select-container">
+                    <label for="product_name">產品名稱：</label>
+                    <select id="product_name" name="product_name" required disabled>
+                        <option value="" disabled selected>請先選擇產品類型</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="right-side">
+
+            </div>
+        </div>
+
+        <div id="button-container">
+            <button id="submit_button" type="submit" disabled>搜尋</button>
+        </div>
+
+    </form>
+
+    <table id="results-table">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

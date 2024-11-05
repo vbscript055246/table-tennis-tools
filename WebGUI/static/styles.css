@@ -1,0 +1,194 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1f2d;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffbf46;
+}
+
+#form-container {
+    display: flex;
+    justify-content: space-between; /* 左右分配空間 */
+    margin-bottom: 30px;
+    gap: 30px; /* 控制左右之間的間距 */
+}
+
+/* 左邊選單區域 */
+#left-side {
+    display: flex;
+    gap: 20px; /* 選單間距 */
+    flex: 1;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    font-size: 1rem;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #9ea3b0;
+    color: #od1f2d;
+    cursor: pointer;
+    font-size: 14pt;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008db3;
+}
+
+/* 停用時的按鈕樣式 */
+button:disabled {
+    background-color: #cccccc; /* 改變按鈕背景色 */
+    color: #777777; /* 使按鈕內的字變灰色 */
+    cursor: not-allowed; /* 更改鼠標指標樣式 */
+}
+
+/* 停用狀態下，禁用 hover 效果 */
+button:disabled:hover {
+    background-color: #cccccc; /* 保持背景色不變 */
+    color: #777777; /* 保持文字為灰色 */
+}
+
+#button-container {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 表格樣式 */
+#results-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #292929;
+}
+
+#results-table th, #results-table td {
+    padding: 12px 15px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+#results-table th {
+    background-color: #333;
+    color: #ffbf46;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#results-table td {
+    color: #f0f0f0;
+}
+
+#results-table tbody tr:nth-child(even) {
+    background-color: #3d3d3d;
+}
+
+#results-table tbody tr:hover {
+    background-color: #4d4d4d;
+}
+
+/* Select2 樣式修正 */
+.select2-container {
+    width: 100% !important;   /* 確保 Select2 的容器寬度與父容器對齊 */
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 垂直居中 */
+    flex-direction: row;  /* 讓標籤和選項水平排列 */
+    margin-bottom: 20px;
+}
+
+.field-group label {
+    min-width: 85px; /* 控制標籤的最小寬度 */
+}
+
+#right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  /* 垂直排列內容 */
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid #444;
+    padding: 20px;
+    min-height: 200px;  /* 設置較大的最小高度 */
+    width: auto;  /* 寬度自動適應 */
+    color: #ffbf46;
+}
+
+/* 讓選項自動換行，避免橫向過長 */
+.radio-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;  /* 讓選項換行顯示 */
+    width: 100%;  /* 讓選項佔滿可用空間 */
+}
+
+/* 已選擇的選項背景和字體顏色 */
+.select2-container--default .select2-selection--single {
+    width: 100%;
+    background-color: #9ea3b0;  /* 已選擇項目的背景顏色 */
+    color: #ffbf46;  /* 已選擇項目的字體顏色 */
+    border: 1px solid #444;  /* 邊框顏色 */
+}
+
+/* 下拉選單背景顏色和選項字體顏色 */
+.select2-container--default .select2-results__option {
+    background-color: #546a7b;  /* 選項的背景顏色 */
+    color: #ffbf46;  /* 選項字體顏色 */
+}
+
+/* 高亮顯示時（鼠標懸停或鍵盤導航選中）的選項 */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #c4d7f2;  /* 高亮時的背景顏色 */
+    color: #od1f2d;  /* 高亮時的字體顏色 */
+}
+
+/* 自定義 Select2 取消按鈕的樣式 */
+.select2-selection__clear {
+    color: #ff0000; /* 設定取消按鈕的顏色為紅色 */
+    font-size: 16px; /* 調整取消按鈕的大小 */
+    margin-right: -40px !important; /* 調整取消按鈕與選單邊緣的距離 */
+    cursor: pointer; /* 鼠標移到取消按鈕時顯示為指針 */
+    line-height: 7px;  /* 這裡設置與選單高度一致的 line-height */
+}
+
+/*
+.select2-selection__clear:hover {
+    color: #ff6600;  設定取消按鈕在 hover 狀態下的顏色
+}
+*/
